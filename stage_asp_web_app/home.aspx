@@ -10,6 +10,9 @@
     <form id="form1" runat="server">
     <div>
         <h1 id="home">home</h1>
+        <h1>
+            <asp:Label ID="visit" runat="server" Font-Bold="True" Font-Size="Medium"></asp:Label>
+        </h1>
     </div>
         <p>
             CIN:&nbsp;
@@ -27,11 +30,11 @@
         </asp:DropDownList>
         <br />
         <br />
-        Niveau de formation:&nbsp; <asp:DropDownList ID="DDNformation" runat="server" Height="17px"  Width="130px">
+        Niveau de formation:&nbsp; <asp:DropDownList ID="DDNformation" runat="server" Height="17px"  Width="130px" AutoPostBack="True" OnSelectedIndexChanged="DDNformation_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
         <br />
-        Secteur:&nbsp; <asp:DropDownList ID="DDSecteur" runat="server" Height="16px" Width="130px">
+        Secteur:&nbsp; <asp:DropDownList ID="DDSecteur" runat="server" Height="16px" Width="130px" AutoPostBack="True" OnSelectedIndexChanged="DDSecteur_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
         <br />
@@ -39,7 +42,10 @@
         </asp:DropDownList>
         <br />
         <br />
-        <asp:Button ID="valiider" runat="server" Text="valider" />
+        <asp:Button ID="valiider" runat="server" Text="valider" OnClick="valiider_Click" />
+        <p>
+            <asp:Label ID="m" runat="server"></asp:Label>
+        </p>
     </form>
 </body>
 </html>

@@ -1,5 +1,4 @@
 c:\Users\Bilal\Documents\Visual Studio 2012\Projects\stage_asp_web_app\stage_asp_web_app\bin\stage_asp_web_app.dll
 c:\Users\Bilal\Documents\Visual Studio 2012\Projects\stage_asp_web_app\stage_asp_web_app\bin\stage_asp_web_app.pdb
-c:\Users\Bilal\Documents\Visual Studio 2012\Projects\stage_asp_web_app\stage_asp_web_app\obj\Debug\stage_asp_web_app.csprojResolveAssemblyReference.cache
 c:\Users\Bilal\Documents\Visual Studio 2012\Projects\stage_asp_web_app\stage_asp_web_app\obj\Debug\stage_asp_web_app.dll
 c:\Users\Bilal\Documents\Visual Studio 2012\Projects\stage_asp_web_app\stage_asp_web_app\obj\Debug\stage_asp_web_app.pdb

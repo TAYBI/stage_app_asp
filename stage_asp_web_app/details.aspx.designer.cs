@@ -10,7 +10,7 @@
 namespace stage_asp_web_app {
     
     
-    public partial class home {
+    public partial class details {
         
         /// <summary>
         /// form1 control.
@@ -22,66 +22,84 @@ namespace stage_asp_web_app {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// visit control.
+        /// title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label visit;
+        protected global::System.Web.UI.WebControls.Label title;
         
         /// <summary>
-        /// DDNScoilare control.
+        /// info control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDNScoilare;
+        protected global::System.Web.UI.WebControls.Label info;
         
         /// <summary>
-        /// DDNformation control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDNformation;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// DDSecteur control.
+        /// profil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDSecteur;
+        protected global::System.Web.UI.WebControls.Label profil;
         
         /// <summary>
-        /// DDFiliere control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDFiliere;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// valiider control.
+        /// conditions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button valiider;
+        protected global::System.Web.UI.WebControls.Label conditions;
         
         /// <summary>
-        /// m control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label m;
+        protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
+        /// debouche control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label debouche;
+        
+        /// <summary>
+        /// telecharger control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button telecharger;
     }
 }
