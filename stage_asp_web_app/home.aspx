@@ -16,15 +16,19 @@
     </div>
         <p>
             CIN:&nbsp;
-            <input id="cin" type="text" /></p>
+            <asp:TextBox ID="cin" runat="server"></asp:TextBox>
+        </p>
         <p>
             &nbsp;Prenom:&nbsp;
-            <input id="prenom" type="text" /></p>
+            <asp:TextBox ID="prenom" runat="server"></asp:TextBox>
+        </p>
         <p>
-            Nom:&nbsp; <input id="nom" type="text" /></p>
+            Nom:&nbsp; 
+            <asp:TextBox ID="nom" runat="server"></asp:TextBox>
+        </p>
         <p>
-            Date_Naiss: 
-            <input id="date_naiss" type="text" />
+            Date_Naiss:&nbsp;
+            <asp:TextBox ID="d_naiss" runat="server"></asp:TextBox>
              </p>
         NiveauScolaire:&nbsp; <asp:DropDownList ID="DDNScoilare" runat="server" Height="16px" Width="130px" OnSelectedIndexChanged="DDNScoilare_SelectedIndexChanged" AutoPostBack="True">
         </asp:DropDownList>

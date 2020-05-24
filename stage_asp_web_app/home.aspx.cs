@@ -17,6 +17,26 @@ namespace stage_asp_web_app
 
         public void add_user()
         {
+            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-1GE9PP9;Initial Catalog=stage_app;Integrated Security=True");
+            using (SqlCommand command = new SqlCommand())
+            {
+                command.Connection = connection;
+                command.CommandType = CommandType.Text;
+                command.CommandText = "INSERT into users (cin, name, last_name, date_nais, niveau_scolaire, niveau_formation, secteure, filiere) "+
+                                      "VALUES (@cin, @name, @last_name, @date_nais, @niveau_scolaire, @niveau_formation, @secteure, @filiere)";
+                command.Parameters.AddWithValue("@cin", cin.Text);
+                command.Parameters.AddWithValue("@name", prenom.Text);
+                command.Parameters.AddWithValue("@last_name", nom.Text);
+                command.Parameters.AddWithValue("@date_nais", d_naiss.Text);
+                command.Parameters.AddWithValue("@niveau_scolaire", DDNScoilare.Text);
+                command.Parameters.AddWithValue("@niveau_formation", DDNformation.Text);
+                command.Parameters.AddWithValue("@secteure", DDSecteur.Text);
+                command.Parameters.AddWithValue("@filiere", DDFiliere.Text);
+
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
         }
 
         public List<string> string_to_list(string str)
@@ -72,7 +92,6 @@ namespace stage_asp_web_app
             return name_liste;
         }
 
-
         public Filiere get_filiere(string name)
         {
             SqlDataReader rdr = null;
@@ -101,11 +120,13 @@ namespace stage_asp_web_app
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            visit.Text = visiteurs();
             if (!IsPostBack)
             {
-                visit.Text = visiteurs();
                 DDNScoilare.DataSource = string_to_list("bac,niveau bac");
                 DDNScoilare.DataBind();
+                DDNScoilare.SelectedIndex = 0;
+                DDNScoilare_SelectedIndexChanged(null, null);
             }
         }
 
@@ -118,6 +139,9 @@ namespace stage_asp_web_app
 
             DDNformation.DataSource = string_to_list(niveaFormation);
             DDNformation.DataBind();
+
+            DDNformation.SelectedIndex = 0;
+            DDNformation_SelectedIndexChanged(null, null);
         }
 
         protected void DDNformation_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,6 +149,9 @@ namespace stage_asp_web_app
             string txt = get_string("secteurs", "niveaux", DDNformation.Text);
             DDSecteur.DataSource = string_to_list(txt);
             DDSecteur.DataBind();
+
+            DDNformation.SelectedIndex = 0;
+            DDSecteur_SelectedIndexChanged(null, null);
         }
 
         protected void DDSecteur_SelectedIndexChanged(object sender, EventArgs e)
@@ -138,6 +165,7 @@ namespace stage_asp_web_app
         {
             filiere = get_filiere(DDFiliere.Text);
             Session["Filiere"] = filiere;
+            add_user();
             Response.Redirect("details.aspx");
         }
     }

@@ -31,6 +31,42 @@ namespace stage_asp_web_app {
         protected global::System.Web.UI.WebControls.Label visit;
         
         /// <summary>
+        /// cin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cin;
+        
+        /// <summary>
+        /// prenom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox prenom;
+        
+        /// <summary>
+        /// nom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nom;
+        
+        /// <summary>
+        /// d_naiss control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox d_naiss;
+        
+        /// <summary>
         /// DDNScoilare control.
         /// </summary>
         /// <remarks>
