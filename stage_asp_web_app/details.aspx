@@ -8,6 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div id="content">
         <asp:Label ID="title" runat="server" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
     <div>
     
@@ -35,7 +36,21 @@
         <asp:Label ID="debouche" runat="server"></asp:Label>                
         <br />
         <br />
-        <asp:Button ID="telecharger" runat="server" Text="Telecharger les  details" />
+        </div>
+        <input type="button" value="Telecharger les details" id="btnPrint" />
     </form>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#btnPrint").live("click", function () {
+            var divContents = $("#content").html();
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write('<html><head><title>DIV Contents</title>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        });
+    </script>
 </body>
 </html>

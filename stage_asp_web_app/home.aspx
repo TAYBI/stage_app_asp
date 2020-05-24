@@ -38,14 +38,11 @@
         </asp:DropDownList>
         <br />
         <br />
-        Filiere:&nbsp; <asp:DropDownList ID="DDFiliere" runat="server" Width="130px">
+        Filiere:&nbsp; <asp:DropDownList ID="DDFiliere" runat="server" Width="130px" AutoPostBack="True">
         </asp:DropDownList>
         <br />
         <br />
         <asp:Button ID="valiider" runat="server" Text="valider" OnClick="valiider_Click" />
-        <p>
-            <asp:Label ID="m" runat="server"></asp:Label>
-        </p>
     </form>
 </body>
 </html>

@@ -15,6 +15,10 @@ namespace stage_asp_web_app
         string name_liste;
         Filiere filiere;
 
+        public void add_user()
+        {
+        }
+
         public List<string> string_to_list(string str)
         {
             return str.Split(',').ToList();
@@ -94,18 +98,22 @@ namespace stage_asp_web_app
             }
             return filiere;
         }
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            visit.Text = visiteurs();
-            DDNScoilare.Items.Add("bac");
-            DDNScoilare.Items.Add("niveau bac");
+            if (!IsPostBack)
+            {
+                visit.Text = visiteurs();
+                DDNScoilare.DataSource = string_to_list("bac,niveau bac");
+                DDNScoilare.DataBind();
+            }
         }
 
         protected void DDNScoilare_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (DDNScoilare.SelectedValue.ToString().Equals("bac"))
+            if (DDNScoilare.Text.Equals("bac"))
                 niveaFormation = "Technicien Spécialisé,Technicien,Qualification,Spécialisation";
-            else if (DDNScoilare.SelectedValue.ToString().Equals("niveau bac"))
+            else if (DDNScoilare.Text.Equals("niveau bac"))
                 niveaFormation = "Technicien,Qualification,Spécialisation";
 
             DDNformation.DataSource = string_to_list(niveaFormation);
@@ -114,21 +122,21 @@ namespace stage_asp_web_app
 
         protected void DDNformation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string txt = get_string("secteurs", "niveaux", DDNformation.SelectedValue.ToString());
+            string txt = get_string("secteurs", "niveaux", DDNformation.Text);
             DDSecteur.DataSource = string_to_list(txt);
             DDSecteur.DataBind();
         }
 
         protected void DDSecteur_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string txt = get_string("filieres", "secteurs", DDSecteur.SelectedValue.ToString());
+            string txt = get_string("filieres", "secteurs", DDSecteur.Text);
             DDFiliere.DataSource = string_to_list(txt);
             DDFiliere.DataBind();
         }
 
         protected void valiider_Click(object sender, EventArgs e)
         {
-            filiere = get_filiere(DDFiliere.SelectedValue.ToString());
+            filiere = get_filiere(DDFiliere.Text);
             Session["Filiere"] = filiere;
             Response.Redirect("details.aspx");
         }
