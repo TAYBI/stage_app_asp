@@ -15,6 +15,22 @@ namespace stage_asp_web_app
         string name_liste;
         Filiere filiere;
 
+        public Boolean visiteur_exisit(string cin)
+        {
+            SqlDataReader rdr = null;
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-1GE9PP9;Initial Catalog=stage_app;Integrated Security=True");
+            string selectSql = "SELECT * FROM users WHERE cin = '" + cin + "'";
+            SqlCommand cmd = new SqlCommand(selectSql, con);
+
+            con.Open();
+            rdr = cmd.ExecuteReader();
+
+            if (rdr.HasRows)
+                return true;
+
+            return false;
+        }
+
         public void add_user()
         {
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-1GE9PP9;Initial Catalog=stage_app;Integrated Security=True");
@@ -163,9 +179,9 @@ namespace stage_asp_web_app
 
         protected void valiider_Click(object sender, EventArgs e)
         {
-            filiere = get_filiere(DDFiliere.Text);
             Session["Filiere"] = filiere;
-            add_user();
+            if(!visiteur_exisit(cin.Text))
+                add_user();
             Response.Redirect("details.aspx");
         }
     }
