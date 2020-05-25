@@ -179,7 +179,7 @@ namespace stage_asp_web_app
 
         protected void valiider_Click(object sender, EventArgs e)
         {
-            Session["Filiere"] = filiere;
+            Session["Filiere"] = get_filiere(DDFiliere.Text);
             if(!visiteur_exisit(cin.Text))
                 add_user();
             Response.Redirect("details.aspx");
